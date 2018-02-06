@@ -27,11 +27,11 @@ contract GreenGoodGuyGas {
 		return ((valuesInTime[valuesInTime.length - 1].value ) * 9)/10;
 	}
 
-	function getValuesInTime(uint index) public returns (ValueInTime[]) {
+	function getValuesInTime(uint index) public constant returns (ValueInTime[]) {
 		return valuesInTime[index];
 	}
 
-	function getValuesInTimeLength() public returns (uint) {
+	function getValuesInTimeLength() public constant returns (uint) {
 		return valuesInTime.length;
 	}
 
@@ -51,7 +51,7 @@ contract GreenGoodGuyGas {
 	    lockContract(locationType);
 	}
 
-	function getDecaySinceGeneration() public constant ret	urns (uint) {
+	function getDecaySinceGeneration() public constant returns (uint) {
 		return valuesInTime[0].value - valuesInTime[valuesInTime.length - 1].value;
 	}
 
