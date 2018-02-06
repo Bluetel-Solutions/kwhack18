@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const path = require('path')
 const expressHandlebars = require('express-handlebars')
 const cors = require('cors')
 const httpProxyMiddleware = require('http-proxy-middleware')
@@ -18,6 +19,7 @@ app.engine('.html', expressHandlebars({
 }))
 app.set('view engine', '.html')
 app.use(cors())
+app.use('/images', express.static(path.join(__dirname, './../images')))
 app.use(middleware(compiler, {
     publicPath: '/dist/'
 }))

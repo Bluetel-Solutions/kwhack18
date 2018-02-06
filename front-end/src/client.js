@@ -1,4 +1,6 @@
 const Web3 = require('web3')
+require('./bind.jsx')
+
 const web3 = new Web3()
 web3.setProvider(new Web3.providers.HttpProvider("/__service/parity/v1"))
 
@@ -24,3 +26,4 @@ window.transfer = _ => GreenGoodGuysGasContract.methods.newValueInTime("me", "me
 window.calcDecay = _ => GreenGoodGuysGasContract.methods.calcDecay().call().then(console.log)
 
 window.knownDemo = _ => window.calcDecay() ; window.unlockRequest().then(window.transfer)
+
