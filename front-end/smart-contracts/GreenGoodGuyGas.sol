@@ -27,8 +27,8 @@ contract GreenGoodGuyGas {
 		return ((valuesInTime[valuesInTime.length - 1].value ) * 9)/10;
 	}
 
-	function getValuesInTime(uint index) public constant returns (ValueInTime) {
-		return valuesInTime[index];
+	function getValuesInTime(uint index) public constant returns (uint, string, string) {
+		return (valuesInTime[index].value, valuesInTime[index].owner, valuesInTime[index].locationType);
 	}
 
 	function getValuesInTimeLength() public constant returns (uint) {
